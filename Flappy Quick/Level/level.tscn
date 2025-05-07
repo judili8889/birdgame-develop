@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk8yarw4im8i"]
+
+[ext_resource type="Script" uid="uid://urme3lpf02cm" path="res://Level/level.gd" id="1_0cws3"]
+[ext_resource type="Script" uid="uid://opa27o5y25wd" path="res://Level/parallax by code.gd" id="1_gaq3f"]
+[ext_resource type="Texture2D" uid="uid://bcvb8kgfnnpdt" path="res://Assets/Background/layer_01_1920 x 1080.png" id="1_vnkp6"]
+[ext_resource type="Texture2D" uid="uid://c3g5t186ctxae" path="res://Assets/Background/layer_02_1920 x 1080.png" id="2_ppkj0"]
+[ext_resource type="Texture2D" uid="uid://dp8t0n3hpl1qu" path="res://Assets/Background/layer_03_1920 x 1080.png" id="3_8ydog"]
+[ext_resource type="Texture2D" uid="uid://bmt07qaqx2kpd" path="res://Assets/Background/layer_04_1920 x 1080.png" id="4_sc8i7"]
+[ext_resource type="Texture2D" uid="uid://n5cc740jcqme" path="res://Assets/Background/layer_05_1920 x 1080.png" id="5_cp0o2"]
+[ext_resource type="PackedScene" uid="uid://bjfhxho1611uu" path="res://Pipes/pipe_spawner.tscn" id="8_3gva0"]
+[ext_resource type="PackedScene" uid="uid://csjmou40c8g5b" path="res://bird.tscn" id="9_5kbho"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_0cws3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+script = ExtResource("1_gaq3f")
+LayerSpeed = -2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("1_vnkp6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+script = ExtResource("1_gaq3f")
+LayerSpeed = -4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(960, 540)
+texture = ExtResource("2_ppkj0")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+script = ExtResource("1_gaq3f")
+LayerSpeed = -6.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(960, 540)
+texture = ExtResource("3_8ydog")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+script = ExtResource("1_gaq3f")
+LayerSpeed = -8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(960, 540)
+texture = ExtResource("4_sc8i7")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 0)
+script = ExtResource("1_gaq3f")
+LayerSpeed = -10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(960, 540)
+texture = ExtResource("5_cp0o2")
+
+[node name="PipeSpawner" parent="." instance=ExtResource("8_3gva0")]
+position = Vector2(2006, 399)
+
+[node name="Bird" parent="." instance=ExtResource("9_5kbho")]
+position = Vector2(352, 470)

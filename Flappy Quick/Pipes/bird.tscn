@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cna06p4kwprts"]
+
+[ext_resource type="Texture2D" uid="uid://djuv4wgbsi50" path="res://Bird/Bird1.png" id="1_wwpyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3f1p"]
+size = Vector2(197, 130)
+
+[node name="Bird" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_q3f1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wwpyg")

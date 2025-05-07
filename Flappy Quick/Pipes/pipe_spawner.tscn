@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjfhxho1611uu"]
+
+[ext_resource type="Script" uid="uid://b64u1ahiugwea" path="res://PipeSpawner.gd" id="1_eb0ux"]
+[ext_resource type="PackedScene" uid="uid://cen3vqbavwey2" path="res://Pipes/pipes.tscn" id="2_xqeck"]
+
+[node name="PipeSpawner" type="Node2D"]
+script = ExtResource("1_eb0ux")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Pipes" parent="." instance=ExtResource("2_xqeck")]
+position = Vector2(8, 89)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
